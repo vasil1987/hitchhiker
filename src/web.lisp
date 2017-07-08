@@ -26,6 +26,9 @@
 (defroute "/" ()
   (render #P"index.html"))
 
+(defroute ("/say/:name" :method :post) (&key name)
+  (render-json name))
+
 ;;
 ;; Error pages
 

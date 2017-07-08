@@ -6,7 +6,8 @@
   (:import-from :clack
                 :clackup)
   (:export :start
-           :stop))
+           :stop
+		   :try))
 (in-package :hitchhiker)
 
 (defvar *appfile-path*
@@ -28,3 +29,6 @@
   (prog1
       (clack:stop *handler*)
     (setf *handler* nil)))
+
+(defun try ()
+  (start :server :woo :port 8080))
